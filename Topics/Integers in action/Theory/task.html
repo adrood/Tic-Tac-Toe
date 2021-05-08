@@ -1,0 +1,47 @@
+<html>
+ <head></head>
+ <body>
+  <h2 style="text-align: center;">Basic information about Int and Long types</h2> 
+  <p>Integer numbers are often used in real programs. As you may recall, Kotlin has several types to store them. The most used types are <code class="language-kotlin">Int</code> (32 bits) and <code class="language-kotlin">Long</code> (64 bits). You can perform all types of arithmetic operations (<code class="language-kotlin">+</code>, <code class="language-kotlin">-</code>, <code class="language-kotlin">*</code>, <code class="language-kotlin">/</code>, <code class="language-kotlin">%</code>) with variables of these types. Let's take a look at several examples.</p> 
+  <pre><code class="language-kotlin">val two = 2  // Int
+val ten = 10 // Int
+
+val twelve = two + ten // 12
+val eight = ten - two  // 8
+val twenty = two * ten // 20
+val five = ten / two   // 5
+val zero = ten % two   // 0, no remainder</code></pre> 
+  <p>You may already know what these operations actually do. The same operations work with the <code class="language-kotlin">Long</code> type. To declare a variable of the <code class="language-kotlin">Long</code> type, you may choose one of these ways:</p> 
+  <pre><code class="language-kotlin">val longNumber1 = 1_000_000_000_000_000
+val longNumber2: Long = 1_000_000
+val longNumber3 = 1000L
+
+val result = longNumber1 + longNumber2 - longNumber3
+println(result) // 1000000000999000</code></pre> 
+  <p>The value <code class="language-kotlin">longNumber1</code> is <code class="language-kotlin">Long</code> because it is greater than the possible value of the <code class="language-kotlin">Int</code> type. The value <code class="language-kotlin">longNumber2</code> is <code class="language-kotlin">Long</code> because we specified the type. The value <code class="language-kotlin">longNumber3</code> is <code class="language-kotlin">Long</code> because we tagged the value with the suffix <code class="language-kotlin">L</code> (<code class="language-kotlin">Long</code>). The <code class="language-kotlin">result</code> is <code class="language-kotlin">Long</code> because it is the result of the sum of three <code class="language-kotlin">Long</code>s.</p> 
+  <p>Do not use <code class="language-kotlin">Long</code>s unless you absolutely have to (e.g., to process large values).</p> 
+  <p></p>
+  <div class="alert alert-primary">
+   See those 
+   <strong>underscores</strong> (
+   <code class="language-kotlin">_</code>) in numbers? In Kotlin, you can use underscores to simplify the readability of a number. We often group digits using them. Underscores can't be placed before or after a number, but they can be placed anywhere inside it and even in a row.
+  </div>
+  <p></p> 
+  <h2 style="text-align: center;">Reading numbers from the standard input</h2> 
+  <p>As a rule, to solve some problem you need to read some data from the world outside, process it, and output the result. For example, this program reads two numbers from the standard input, adds them, and outputs the sum.</p> 
+  <pre><code class="language-kotlin">fun main() {
+    val a = readLine()!!.toInt()
+    val b = readLine()!!.toInt()
+
+    val sum = a + b
+
+    println(sum)
+}</code></pre> 
+  <p>This simple code uses <span style="color: #000000;"><code class="language-kotlin">readLine()</code> </span>to read data. It works for positive, negative, and zero numbers because the <code class="language-kotlin">Int</code> type supports all of them.</p> 
+  <p>If we know that the input numbers can be quite large, we can read <code class="language-kotlin">Long</code>'s instead of <code class="language-kotlin">Int</code>'s:</p> 
+  <pre><code class="language-kotlin">val a = readLine()!!.toLong()
+val b = readLine()!!.toLong()</code></pre> 
+  <p>No more lines need to be changed in this code.</p> 
+  <p>Now you have enough knowledge to write useful programs that process data. You may use the template above to solve code challenges in this lesson. Try to name your variables meaningfully when solving problems.</p>
+ </body>
+</html>

@@ -1,0 +1,17 @@
+type: code
+files:
+- name: src/Main.kt
+  visible: true
+  text: |-
+    fun main() {
+        val longs = // ...
+
+        println(longs.joinToString())
+    }
+  learner_created: false
+feedback_link: https://hyperskill.org/learn/step/4571#comment
+status: Solved
+feedback:
+  message: <html>Correct solution</html>
+  time: Thu, 06 May 2021 05:29:30 UTC
+record: -1
